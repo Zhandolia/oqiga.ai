@@ -9,6 +9,9 @@ export default function Story() {
     const [transcript, setTranscript] = useState('');
     const [recognition, setRecognition] = useState(null);
     const [generatedAudioUrl, setGeneratedAudioUrl] = useState(null);
+    const [highlightedIndex, setHighlightedIndex] = useState(-1);
+
+    const snoopDoggAudioUrl = "./audio/snoop-dogg.wav";
 
     const sampleText = [
         "Hello, my name is [Your Name], and today, I'll embark on a fascinating journey through the wonders of the spoken word.",
@@ -62,7 +65,26 @@ export default function Story() {
         ));
     };
 
+    const startSnoopDogg = () => {
+        // Play the Snoop Dogg audio file here
+        const audio = new Audio('/path/to/snoop_dogg_audio.mp3');
+        audio.play();
+
+        // Synchronize audio playback with text highlighting
+        let currentIndex = 0;
+        const highlightInterval = setInterval(() => {
+            if (currentIndex < sampleText.length) {
+                setHighlightedIndex(currentIndex);
+                currentIndex++;
+            } else {
+                clearInterval(highlightInterval);
+                setHighlightedIndex(-1); // Clear highlighting when done
+            }
+        }, 1000); // Adjust the interval as needed
+    };
+
     const handleAnalyzeVoice = async () => {
+        window.location.href = "https://colab.research.google.com/drive/1aIiB3EOwjcKfHUMw05Es0GawQ_sxl_nk#scrollTo=jJnJwv3R9uWT";
         if (!audioData) {
             alert('No audio data to analyze');
             return;
@@ -100,7 +122,11 @@ export default function Story() {
     const onStop = async (recordedBlob) => {
         setAudioData(recordedBlob.blobURL);
         await uploadVoice(recordedBlob.blobURL);
-    };    
+    };
+
+    const openJupyterNotebook = () => {
+        window.open("https://colab.research.google.com/drive/1aIiB3EOwjcKfHUMw05Es0GawQ_sxl_nk#scrollTo=jJnJwv3R9uWT", '_blank');
+    };
 
     const uploadVoice = async (audioDataUrl) => {
         try {
@@ -163,25 +189,72 @@ export default function Story() {
         "As they walked, Drippy thought about how even though he could evaporate into a cloud and then rain back down, he was always the same amount of water, just in different forms. This new understanding made him appreciate his own journey through the water cycle even more.",
         "And so, Drippy the water droplet and Breezy the wind returned to Scienceville, their minds full of new knowledge. They couldn't wait to share their adventure and the fascinating Law of Conservation of Mass with all their friends.",
         "The end."
-      ];
+    ];
+
+    // const startSnoopDogg = () => {
+    //     if (snoopDoggAudioUrl) {
+    //         const audio = new Audio(snoopDoggAudioUrl);
+    //         audio.play();
+    //     }
+    // };
 
     return (
         <div className="story-container">
-            
             <div className="story-left">
                 <h1>Read and Record Your Voice</h1>
                 <p>Please read the following text aloud to help us analyze your voice:</p>
-                <p>{highlightText()}</p>
+                <div style={{ whiteSpace: 'pre-wrap' }}>
+                    {sampleText.map((paragraph, index) => (
+                        <p key={index}>
+                            {paragraph.split(' ').map((word, wordIndex) => (
+                                <span
+                                    key={wordIndex}
+                                    style={{
+                                        color: highlightedIndex === wordIndex ? 'red' : 'black',
+                                    }}
+                                >
+                                    {word}{' '}
+                                </span>
+                            ))}
+                        </p>
+                    ))}
+                </div>
                 <ReactMic
                     record={isRecording}
                     className="sound-wave"
                     onStop={onStop}
                     strokeColor="#000000"
-                    backgroundColor="#FF4081" />
-                <button onClick={startRecording} disabled={isRecording}>Start Recording</button>
-                <button onClick={stopRecording} disabled={!isRecording}>Stop Recording</button>
-                {/* {audioData && <audio src={audioData} controls />} */}
-                {audioData && <button onClick={handleAnalyzeVoice}>Analyze</button>}
+                    backgroundColor="#FF4081"
+                />
+                <button onClick={startRecording} disabled={isRecording}>
+                    Start Recording
+                </button>
+                <button onClick={stopRecording} disabled={!isRecording}>
+                    Stop Recording
+                </button>
+                <button onClick={handleAnalyzeVoice}>Analyze</button>
+                <a
+                    href="https://colab.research.google.com/drive/1aIiB3EOwjcKfHUMw05Es0GawQ_sxl_nk#scrollTo=jJnJwv3R9uWT"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                        display: 'inline-block',
+                        padding: '10px 20px',
+                        margin: '10px',
+                        fontSize: '16px',
+                        cursor: 'pointer',
+                        textAlign: 'center',
+                        textDecoration: 'none',
+                        color: 'white',
+                        backgroundColor: '#007bff',
+                        border: '1px solid #007bff',
+                        borderRadius: '5px',
+                        userSelect: 'none', // Prevent text selection
+                        outline: 'none' // Remove focus outline
+                    }}
+                >
+                    Jupyter Notebook
+                </a>
             </div>
             <div className="story-right">
                 <h3>Drippy's Discovery: The Adventure of the Law of Conservation of Mass</h3>
@@ -189,7 +262,9 @@ export default function Story() {
                     <p key={index}>{paragraph}</p>
                 ))}
                 {generatedAudioUrl && <audio src={generatedAudioUrl} controls />}
+                <button onClick={startSnoopDogg}>Snoop Dogg</button>
             </div>
         </div>
     );
+    
 }
