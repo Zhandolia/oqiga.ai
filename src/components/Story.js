@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ReactMic } from 'react-mic';
 import "../style/Story.css"
+import Navbar from './Navbar';
 
 export default function Story() {
     const [isRecording, setIsRecording] = useState(false);
@@ -166,6 +167,7 @@ export default function Story() {
 
     return (
         <div className="story-container">
+            
             <div className="story-left">
                 <h1>Read and Record Your Voice</h1>
                 <p>Please read the following text aloud to help us analyze your voice:</p>

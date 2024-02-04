@@ -66,3 +66,35 @@
     background-color: darkgreen;
 }
   
+.sound-wave {
+    margin-top: 20px;
+}
+
+.sound-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Allow buttons to wrap to the next line if needed */
+    margin-top: 10px;
+}
+
+button {
+    background-color: #5CDB95;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 5px; /* Add margin for spacing between buttons */
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #379683;
+}
+
+button:disabled {
+    background-color: #8ee4af;
+    cursor: not-allowed;
+}
