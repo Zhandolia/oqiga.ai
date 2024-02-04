@@ -9,7 +9,7 @@ export default function About() {
             <Navbar />
             <div className="about--wrapper">
                 <div className="about--left">
-                    <img className="about--img" src={process.env.PUBLIC_URL + "/skazka.jpg"} alt="Hailey Moon"/>
+                    <img className="about--img" src={"/skazka.jpg"} alt="logo"/>
                 </div>
                 
                 <div className="about--right">

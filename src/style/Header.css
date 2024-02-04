@@ -39,7 +39,10 @@ html, body {
 
 .header .blob {
     /* background: #CBE6FF; */
-    background-image: linear-gradient(#CBE6FF, #d5cbff);
+    /* background-image: linear-gradient(#CBE6FF, #d5cbff); */
+
+    background-image: linear-gradient(#fff2a7, #bbf69e);
+    /* background-image: linear-gradient(#009688, #00BCD4); */
     opacity: 0.8;
     height: 350px;
     width: 350px;
@@ -160,4 +163,18 @@ html, body {
     .header .header--title {
         font-size: 1rem;
     }
+}
+
+.header--top {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the content horizontally */
+    line-height: 0;
+}
+
+/* Add this style for the logo */
+.logo {
+    width: 50px; /* Adjust the width as needed */
+    height: 50px; /* Adjust the height as needed */
+    margin-right: 10px; /* Add margin to separate the logo from text */
 }
