@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/React-Portfolio/static/css/main.fb6bdee4.css",
+    "main.js": "/React-Portfolio/static/js/main.0edb1b0c.js",
+    "static/js/787.28cb0dcd.chunk.js": "/React-Portfolio/static/js/787.28cb0dcd.chunk.js",
+    "static/media/Hailey-Moon.jpg": "/React-Portfolio/static/media/Hailey-Moon.b70d73d3be8fac8c4214.jpg",
+    "static/media/linkedin.svg": "/React-Portfolio/static/media/linkedin.1ba5e742a5585dd4c82fdf3249d8cf14.svg",
+    "static/media/github.svg": "/React-Portfolio/static/media/github.c273bfaaa90f919dda4507223b5897fd.svg",
+    "index.html": "/React-Portfolio/index.html",
+    "main.fb6bdee4.css.map": "/React-Portfolio/static/css/main.fb6bdee4.css.map",
+    "main.0edb1b0c.js.map": "/React-Portfolio/static/js/main.0edb1b0c.js.map",
+    "787.28cb0dcd.chunk.js.map": "/React-Portfolio/static/js/787.28cb0dcd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fb6bdee4.css",
+    "static/js/main.0edb1b0c.js"
+  ]
+}

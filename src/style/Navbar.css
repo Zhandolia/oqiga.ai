@@ -1,0 +1,16 @@
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 5%;
+}
+
+.navbar a {
+    z-index: 1;
+}
+
+.navbar .nav--item {
+    font-size: 1.2rem;
+    margin: 15px 30px;
+    color: black;
+    text-decoration: none;
+}

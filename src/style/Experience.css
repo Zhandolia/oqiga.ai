@@ -1,0 +1,67 @@
+.experience {
+    height: 65vh;
+    display: flex;
+    padding: 2%;
+    justify-content: center;
+    align-items: center;
+}
+
+.experience .exp--left {
+    width: 70vh;
+}
+
+.experience .exp--right {
+    width: 70vh;
+}
+
+.experience .exp--company {
+    text-decoration: underline;
+    text-decoration-color: #6C95FF;
+}
+
+.experience .exp--description {
+    font-size: 1.2rem;
+}
+
+.experience .exp--button {
+    background-color: black;
+    text-decoration: none;
+    color: white;
+    border-radius: 80px;
+    padding: 8px 15px;
+    font-size: 1rem;
+}
+
+.experience .exp--img {
+    width: 100%;
+}
+
+/* Tablet size  */
+@media only screen and (max-width: 1024px) {
+    .experience {
+        display: block;
+        padding: 10%;
+        margin: auto;
+        width: 50%;
+    }
+
+    .experience .exp--left {
+        width: 100%;
+    }
+
+    .experience .exp--img {
+        width: 70%;
+    }
+}
+
+/* Mobile size */
+@media only screen and (max-width: 480px) {
+    .experience {
+        padding: 0;
+        width: 70%;
+    }
+
+    .experience .exp--img {
+        width: 30vh;
+    }
+}

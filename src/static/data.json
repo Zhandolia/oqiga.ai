@@ -1,0 +1,134 @@
+[
+    {
+        "id": 1,
+        "company": "",
+        "description": "",
+        "image": "",
+        "link": "",
+        "caseStudy": {
+            "description": "",
+            "role": "",
+            "method": "",
+            "steps": [
+                {
+                    "id": 1,
+                    "title": "",
+                    "image": "",
+                    "caption": ""
+                },
+                {
+                    "id": 2,
+                    "title": "",
+                    "image": "",
+                    "caption": ""
+                },
+                {
+                    "id": 3,
+                    "title": "",
+                    "image": "",
+                    "caption": ""
+                },
+                {
+                    "id": 4,
+                    "title": "",
+                    "image": "",
+                    "caption": ""
+                },
+                {
+                    "id": 5,
+                    "title": "",
+                    "image": "",
+                    "caption": ""
+                }
+            ]
+        }
+    },
+    {
+        "id": 2,
+        "company": "",
+        "description": "",
+        "image": "",
+        "link": "",
+        "caseStudy": {
+            "description": "",
+            "role": "",
+            "method": "",
+            "steps": [
+                {
+                    "id": 1,
+                    "title": "",
+                    "image": "",
+                    "caption": ""
+                },
+                {
+                    "id": 2,
+                    "title": "",
+                    "image": "",
+                    "caption": ""
+                },
+                {
+                    "id": 3,
+                    "title": "",
+                    "image": "",
+                    "caption": ""
+                },
+                {
+                    "id": 4,
+                    "title": "",
+                    "image": "",
+                    "caption": ""
+                },
+                {
+                    "id": 5,
+                    "title": "",
+                    "image": "",
+                    "caption": ""
+                }
+            ]
+        }
+    },
+    {
+        "id": 3,
+        "company": "",
+        "description": "",
+        "image": "",
+        "link": "",
+        "caseStudy": {
+            "description": "",
+            "role": "",
+            "method": "",
+            "steps": [
+                {
+                    "id": 1,
+                    "title": "",
+                    "image": "",
+                    "caption": ""
+                },
+                {
+                    "id": 2,
+                    "title": "",
+                    "image": "",
+                    "caption": ""
+                },
+                {
+                    "id": 3,
+                    "title": "",
+                    "image": "",
+                    "caption": ""
+                },
+                {
+                    "id": 4,
+                    "title": "",
+                    "image": "",
+                    "caption": ""
+                },
+                {
+                    "id": 5,
+                    "title": "",
+                    "image": "",
+                    "caption": ""
+                }
+            ]
+        }
+    }
+]

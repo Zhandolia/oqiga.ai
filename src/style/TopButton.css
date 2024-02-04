@@ -1,0 +1,14 @@
+.topButton--button {
+    font-size: 1rem;
+    border: none;
+    border: 1px solid #6C95FF;
+    background: none;
+    border-radius: 80px;
+    padding: 8px 15px;
+    margin-left: 10%;
+}
+
+.topButton--button:hover {
+    background-color: #6C95FF;
+    color: white;
+}

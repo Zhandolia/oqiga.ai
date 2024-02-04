@@ -1,0 +1,13 @@
+body, button {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; 
+  box-sizing: border-box;
+}
+
+body, button {
+  font-family: 'Montserrat', sans-serif;
+}
+
+p {
+  font-size: 1.2rem;
+}

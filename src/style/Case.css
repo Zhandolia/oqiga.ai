@@ -1,0 +1,28 @@
+.case {
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-top: 8%;
+    padding-bottom: 8%;
+}
+
+.case .case--details-div {
+    display: flex;
+}
+
+.case .case--details-div > div {
+    margin-right: 20%;
+}
+
+.case .blob {
+    background-image: linear-gradient(#CBE6FF, #d5cbff);
+    opacity: 0.8;
+    height: 300px;
+    width: 350px;
+    border-radius: 30% 50% 20% 40%;
+    animation: transform 20s ease-in-out infinite both alternate,
+        movement_one 15s ease-in-out infinite both;
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    z-index: -1;
+}
