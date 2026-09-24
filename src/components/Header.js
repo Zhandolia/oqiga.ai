@@ -17,6 +17,16 @@ export default function Header() {
         <div className="header--bottom">
           <h2 className="header--title">Zhandos & Zhakhangir</h2>
         </div>
+        <p className="header--achievement">
+          <strong>Third place · MakeHarvard 2024</strong>
+          <a
+            href="https://seas.harvard.edu/news/day-ai-devices"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Featured by Harvard SEAS <span aria-hidden="true">↗</span>
+          </a>
+        </p>
       </div>
       <div className="header--wrapper" aria-hidden="true">
         <div className="blob"></div>

@@ -208,6 +208,20 @@ body {
 .header .header--name {
   white-space: nowrap;
 }
+.header--achievement {
+  margin: 28px 0 0;
+  text-align: center;
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+.header--achievement strong {
+  display: block;
+  font-weight: 600;
+}
+.header--achievement a {
+  color: #285d3e;
+  text-underline-offset: 4px;
+}
 @media (max-width: 600px) {
   .header .header--top {
     display: grid;
