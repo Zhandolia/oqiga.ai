@@ -1,0 +1,6 @@
+{
+  "framework": "create-react-app",
+  "installCommand": "npm ci --legacy-peer-deps --no-audit --no-fund",
+  "buildCommand": "npm run build",
+  "outputDirectory": "build"
+}

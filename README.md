@@ -1,26 +1,30 @@
-# React Portfolio with Create React App
+# Kindred Moon
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A calm bedtime story library with parent-controlled AI narration. Previously Oqiga.
 
-## Introduction
+## What works
 
-Hello! This is a portfolio mostly with React. Becuase Create React App doesn't include page routing, I used React Router to include multiple pages in my portfolio. I also have a Python script to parse the data.json file and add new content. This portfolio is deployed through GitHub Pages and I have a custom domain which I configured with my domain provider. You can find more information about React Router and GitHub Pages below!
+- Five original stories, search, category filters, and saved stories.
+- Responsive reading view, standard device narration, playback speed, and a sleep timer.
+- Paste an original or authorized passage of up to 12,000 characters.
+- Record/upload three readings, check signal quality and duration, create an AI preview, then approve before narration.
+- A local Chatterbox Turbo GPU service with session-scoped audio, deletion, and expiry.
 
-React Router: https://reactrouter.com/en/main
-GitHub Pages: https://pages.github.com/
+## Frontend
 
-This is not an official guide on making the portfolio, since a lot of the information are missing. I still need to update and add on a lot of steps, which I'll do in the future.
+```sh
+npm ci --legacy-peer-deps
+npm start
+```
 
-## Set Up
+Build with `npm run build`. `vercel.json` configures the static React build. Hash routes work without server-side route rewriting. On the public site, parent-voice generation is explicitly unavailable until a voice backend is connected; browser device narration is labeled separately.
 
-To create the React app, 
-`yarn create react-app my-app`
-Will create the app named `my-app`
+## Voice model
 
-## Editing
+See [the self-hosting guide](server/README.md). The old hackathon code referenced localhost, placeholder folders and a Colab notebook; the repository did not contain a functioning deployed inference service or a trained checkpoint. Historical files are preserved, but the new app uses `src/bedtime/` and `server/`.
 
-To see live changes on a localhost, run `yarn start`
+The replacement uses a pretrained model with reference-audio conditioning. It does not claim to train a new base model or produce a 100% identical voice. Approve a listening preview before generating a story. No paid voice API is required. The local studio is designed for private use on one computer, not open public hosting.
 
-## Deploy
+## Validation
 
-To deploy changes to the deployed version, run `npm run deploy`
+Production React build; ten API tests (`python -m pytest server/test_app.py -q`); and a real CUDA upload/preview/approval/narration smoke test on RTX 5070. The real-model fixture was synthetic speech, so this verifies the pipeline, not likeness to a real parent. Original library stories are provided in `src/bedtime/stories.js`; no commercial books are bundled.
