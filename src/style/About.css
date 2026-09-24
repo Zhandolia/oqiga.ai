@@ -1,37 +1,89 @@
 .about--wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10%;
 }
 
 .about .about--img {
-    min-width: 250px;
-    width: 70%;
+  min-width: 250px;
+  width: 70%;
 }
 
 .about .about--text {
-    font-size: 1.2rem;
+  font-size: 1.2rem;
 }
 
 .about .blob {
-    background-image: linear-gradient(#fff2a7, #bbf69e);
-    opacity: 0.8;
-    height: 500px;
-    width: 450px;
-    border-radius: 30% 50% 20% 40%;
-    animation: transform 20s ease-in-out infinite both alternate,
-        movement_one 15s ease-in-out infinite both;
-    position: absolute;
-    left: 30%;
-    top: 0%;
-    z-index: -1;
+  background-image: linear-gradient(#fff2a7, #bbf69e);
+  opacity: 0.8;
+  height: 500px;
+  width: 450px;
+  border-radius: 30% 50% 20% 40%;
+  animation:
+    transform 20s ease-in-out infinite both alternate,
+    movement_one 15s ease-in-out infinite both;
+  position: absolute;
+  left: 30%;
+  top: 0%;
+  z-index: -1;
 }
 
 /* Tablet size  */
 @media only screen and (max-width: 1024px) {
-    .about--wrapper {
-        display: block;
-    }
+  .about--wrapper {
+    display: block;
+  }
 }
 
+.about {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: calc(100svh - 65px);
+}
+.about--wrapper {
+  position: relative;
+  gap: 36px;
+  align-items: flex-start;
+  max-width: 1300px;
+  margin: auto;
+  padding: 7%;
+}
+.about--left {
+  flex: 0 1 32%;
+  min-width: 0;
+}
+.about--right {
+  flex: 1;
+  min-width: 0;
+}
+.about .about--img {
+  min-width: 0;
+  width: 100%;
+  max-width: 340px;
+  height: auto;
+}
+.about .blob {
+  pointer-events: none;
+}
+@media (max-width: 1024px) {
+  .about--left {
+    max-width: 340px;
+    margin: 0 auto 32px;
+  }
+  .about--right {
+    width: 100%;
+  }
+}
+@media (max-width: 600px) {
+  .about--wrapper {
+    padding: 28px 22px;
+  }
+  .about--heading {
+    font-size: 1.65rem;
+  }
+  .about .about--text {
+    font-size: 1rem;
+  }
+}

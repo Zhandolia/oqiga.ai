@@ -1,1 +1,30 @@
-body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #171717;
+  background: white;
+}
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+p {
+  font-size: 1.2rem;
+  line-height: 1.65;
+}
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+  outline: 3px solid #216846;
+  outline-offset: 4px;
+}

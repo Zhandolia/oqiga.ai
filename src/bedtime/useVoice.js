@@ -137,6 +137,8 @@ export default function useVoice() {
     revoke(clipRef.current[index]?.url);
     const clip = { blob, duration, url: urlFor(blob) };
     setClips((old) => old.map((item, i) => (i === index ? clip : item)));
+    revoke(narration?.url);
+    setNarration(null);
     setApproved(false);
     setId("");
     revoke(preview);

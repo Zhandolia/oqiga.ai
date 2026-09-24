@@ -1,16 +1,39 @@
 .navbar {
-    display: flex;
-    justify-content: flex-end;
-    padding-right: 5%;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 5%;
 }
 
 .navbar a {
-    z-index: 1;
+  z-index: 1;
 }
 
 .navbar .nav--item {
-    font-size: 1.2rem;
-    margin: 15px 30px;
-    color: black;
-    text-decoration: none;
+  font-size: 1.2rem;
+  margin: 15px 30px;
+  color: black;
+  text-decoration: none;
+}
+.navbar {
+  position: relative;
+  z-index: 2;
+  flex-wrap: wrap;
+  gap: 0;
+  min-height: 65px;
+  align-items: center;
+  background: #fff;
+}
+.navbar .nav--item[aria-current="page"] {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+@media (max-width: 600px) {
+  .navbar {
+    justify-content: center;
+    padding: 0 12px;
+  }
+  .navbar .nav--item {
+    margin: 18px;
+    font-size: 1rem;
+  }
 }

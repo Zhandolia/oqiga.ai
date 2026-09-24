@@ -3,3 +3,4 @@ server/
 src/audio/
 static/
 .git/
+docs/

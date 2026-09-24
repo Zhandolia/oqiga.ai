@@ -1,30 +1,30 @@
-# Kindred Moon
+# OQIGA.AI
 
-A calm bedtime story library with parent-controlled AI narration. Previously Oqiga.
+A simple storytelling app, restored to its original Home / About / Story interface and green-and-yellow animated background.
 
-## What works
+Live demo: https://zhandolia.github.io/oqiga.ai/
 
-- Five original stories, search, category filters, and saved stories.
-- Responsive reading view, standard device narration, playback speed, and a sleep timer.
-- Paste an original or authorized passage of up to 12,000 characters.
-- Record/upload three readings, check signal quality and duration, create an AI preview, then approve before narration.
-- A local Chatterbox Turbo GPU service with session-scoped audio, deletion, and expiry.
-
-## Frontend
+## Run and publish
 
 ```sh
 npm ci --legacy-peer-deps
 npm start
 ```
 
-Build with `npm run build`. `vercel.json` configures the static React build. Hash routes work without server-side route rewriting. On the public site, parent-voice generation is explicitly unavailable until a voice backend is connected; browser device narration is labeled separately.
+`npm run build` builds the app. `npm run pages:build` also copies the app's required static assets into `docs/`. Commit and push `docs/` to publish through GitHub Pages (main branch, `/docs`). Relative asset URLs and hash routes allow the same build to work beneath `/oqiga.ai/` and on localhost.
+
+The original Vercel address can still serve the same frontend. GitHub Pages is the primary demo link.
+
+## What changed
+
+The original title, logo, background, navigation and two-column Story layout are restored. Small layout fixes keep background shapes behind content, prevent narrow-screen overflow, stack the Story columns on mobile, and keep navigation available on every page. The original Drippy story is the default; a plain dropdown provides five more original bedtime stories and a personal-text option.
+
+The broken notebook redirect and placeholder audio buttons were replaced by functional recording/upload controls connected to the existing local voice service. The public static demo explicitly labels standard device narration and the local-only AI voice requirement.
 
 ## Voice model
 
-See [the self-hosting guide](server/README.md). The old hackathon code referenced localhost, placeholder folders and a Colab notebook; the repository did not contain a functioning deployed inference service or a trained checkpoint. Historical files are preserved, but the new app uses `src/bedtime/` and `server/`.
+See [the self-hosting guide](server/README.md). The model setup remains available: three readings, at least 60 seconds total, signal checks, a listening preview, and approval before story generation. Chatterbox Turbo uses pretrained reference-audio conditioning; it does not train a new base model or promise a 100% identical voice.
 
-The replacement uses a pretrained model with reference-audio conditioning. It does not claim to train a new base model or produce a 100% identical voice. Approve a listening preview before generating a story. No paid voice API is required. The local studio is designed for private use on one computer, not open public hosting.
+GitHub Pages hosts the frontend only. Parent-voice inference runs on your own computer; no paid voice API or cloud GPU is configured. The browser's standard narrator is labeled separately.
 
-## Validation
-
-Production React build; ten API tests (`python -m pytest server/test_app.py -q`); and a real CUDA upload/preview/approval/narration smoke test on RTX 5070. The real-model fixture was synthetic speech, so this verifies the pipeline, not likeness to a real parent. Original library stories are provided in `src/bedtime/stories.js`; no commercial books are bundled.
+Validation: production React build, desktop/mobile layout checks and navigation/story selection. The unchanged voice backend previously passed ten API tests and a real RTX 5070 upload/preview/approval/narration test using synthetic speech. Real-parent voice likeness still requires listening to their own preview.
